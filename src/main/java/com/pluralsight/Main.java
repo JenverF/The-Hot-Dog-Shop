@@ -14,17 +14,17 @@ public class Main {
 
         while(isRunning) {
             String options = """
-                    Welcome to Franks House, home of the best hot dogs in Seattle!
                     -------------------------------------------------------------
+                    Welcome to Franks House, home of the best hot dogs in Seattle!
                         1) New Order
                         0) Exit
-                    -------------------------------------------------------------
-                    Select an option:""";
+                    Select an option:
+                    -------------------------------------------------------------""";
             System.out.println(options);
             String choice = scanner.nextLine();
             switch(choice) {
                 case "1":
-                    //orderScreen();
+                    OrderScreen.displayOrderScreen();
                     break;
                 case "0":
                     System.out.println("Bye.");
