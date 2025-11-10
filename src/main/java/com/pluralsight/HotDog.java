@@ -11,6 +11,15 @@ public class HotDog extends Items {
     private ArrayList<String> premiumToppings;
     private ArrayList<String> condiments;
 
+    public HotDog(double basePrice, String name, String size) {
+        super(basePrice, name, size);
+    }
+
+    @Override
+    public double getCost() {
+        return basePrice;
+    }
+
     public String getHotDogType() {
         return hotDogType;
     }
@@ -35,8 +44,4 @@ public class HotDog extends Items {
         return condiments;
     }
 
-    @Override
-    public double getCost() {
-        return 0;
-    }
 }
