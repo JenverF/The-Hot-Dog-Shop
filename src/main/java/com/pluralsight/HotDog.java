@@ -1,9 +1,8 @@
 package com.pluralsight;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class HotDog extends Items {
+public class HotDog extends Item {
     private String hotDogType;
     private String hotDogSize;
     private boolean toastedBun;

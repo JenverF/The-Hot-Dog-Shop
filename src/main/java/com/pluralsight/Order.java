@@ -5,19 +5,19 @@ import java.util.List;
 
 public class Order {
     private double orderTotal;
-    private List<Items> inventory = new ArrayList<>();
+    private List<Item> inventory = new ArrayList<>();
 
-    public List<Items> getItems() {
+    public List<Item> getItems() {
         return inventory;
     }
 
-    public void addItem(Items items) {
+    public void addItem(Item items) {
         inventory.add(items);
     }
 
     public double calculateTotal() {
         orderTotal = 0;
-        for(Items items : inventory) {
+        for(Item items : inventory) {
             orderTotal += items.getCost();
         }
         return orderTotal;

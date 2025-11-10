@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-public class Drinks extends Items{
+public class Drink extends Item {
     private double price;
     private String size;
     private String name;
@@ -15,6 +15,11 @@ public class Drinks extends Items{
 
     public String getName() {
         return name;
+    }
+
+    public static void addDrink() {
+        Drink drink = new Drink();
+
     }
 
     @Override

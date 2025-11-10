@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-public class Sides extends Items {
+public class Side extends Item {
     private String type;
     private double cost = 1.50;
 
