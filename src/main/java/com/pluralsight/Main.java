@@ -1,17 +1,43 @@
 package com.pluralsight;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+import java.util.Scanner;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
+public class Main {
+    static Scanner scanner = new Scanner(System.in);
+
+    static void main() {
+        homeScreen();
+    }
+
+    public static void homeScreen() {
+        boolean isRunning = true;
+
+        while(isRunning) {
+            String options = """
+                    Welcome to Franks House, home of the best hot dogs in Seattle!
+                    -------------------------------------------------------------
+                        1) New Order
+                        0) Exit
+                    -------------------------------------------------------------
+                    Select an option:""";
+            System.out.println(options);
+            String choice = scanner.nextLine();
+            switch(choice) {
+                case "1":
+                    //orderScreen();
+                    break;
+                case "0":
+                    System.out.println("Bye.");
+                    isRunning = false;
+                    break;
+                default:
+                    System.out.println("Invalid input, please try again.");
+                    return;
+            }
         }
+    }
+
+    public static void orderScreen() {
+
     }
 }
