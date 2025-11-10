@@ -1,5 +1,5 @@
 package com.pluralsight;
 
 public abstract class Items {
-    public double getCost;
+    public abstract double getCost();
 }

@@ -1,11 +1,11 @@
 package com.pluralsight;
 
 public class Sides extends Items {
-    private String name;
-    private double cost = 1.50;
+    private String type;
+    private double cost;
 
-    public String getName() {
-        return name;
+    public String getType() {
+        return type;
     }
 
     public double getCost() {
