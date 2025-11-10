@@ -1,13 +1,9 @@
 package com.pluralsight;
 
-public class Drinks extends Items {
+public class Drinks extends Items{
     private double price;
     private String size;
     private String name;
-
-    public Drinks(double basePrice, String name, String size) {
-        super(basePrice, name, size);
-    }
 
     public double getPrice() {
         return price;
@@ -23,6 +19,6 @@ public class Drinks extends Items {
 
     @Override
     public double getCost() {
-        return basePrice;
+        return 0;
     }
 }
