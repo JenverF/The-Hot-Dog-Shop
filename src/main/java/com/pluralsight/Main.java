@@ -36,8 +36,4 @@ public class Main {
             }
         }
     }
-
-    public static void orderScreen() {
-
-    }
 }
