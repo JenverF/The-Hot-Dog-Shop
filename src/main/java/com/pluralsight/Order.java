@@ -4,30 +4,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
-    private double orderTotal;
-    private List<Item> inventory = new ArrayList<>();
+    private List<Item> items;
 
-    public List<Item> getItems() {
-        return inventory;
+    public Order() {
+        this.items = new ArrayList<>();
     }
 
-    public void addItem(Item items) {
-        inventory.add(items);
+    public void addItem(Item item) {
+        items.add(item);
     }
 
-    public double calculateTotal() {
-        orderTotal = 0;
-        for(Item items : inventory) {
-            orderTotal += items.getCost();
+    public double getTotal() {
+        double total = 0;
+        for(Item i : items) {
+            total += i.getPrice();
         }
-        return orderTotal;
+        return total;
     }
 
-    @Override
-    public String toString() {
-        return "Order{" +
-                "orderTotal=" + orderTotal +
-                ", inventory=" + inventory +
-                '}';
+    public String displayOrder() {
+        String summary = "===== ORDER SUMMARY =====\n";
+
+        for (Item i : items) {
+            summary += i.getSummary() + "\n";
+        }
+        summary += String.format("Total: $%.2f\n", getTotal());
+        return summary;
     }
 }

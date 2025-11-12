@@ -12,6 +12,6 @@ public class Side extends Item {
 
     @Override
     public String getSummary() {
-        return "";
+        return name + "Price: " + price;
     }
 }

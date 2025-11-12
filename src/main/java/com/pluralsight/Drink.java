@@ -4,7 +4,7 @@ public class Drink extends Item {
     private String size;
     private String flavor;
 
-    public Drink(String name, double price, String size, String flavor) {
+    public Drink(String size, String flavor) {
         super("Drink", 0.0);
         this.size = size;
         this.flavor = flavor;

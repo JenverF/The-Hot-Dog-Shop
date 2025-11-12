@@ -32,7 +32,7 @@ public class Main {
                     break;
                 default:
                     System.out.println("Invalid input, please try again.");
-                    return;
+                    break;
             }
         }
     }

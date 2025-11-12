@@ -4,11 +4,9 @@ import java.util.Scanner;
 
 public class OrderScreen {
     static Scanner scanner = new Scanner(System.in);
-    static void main() {
-        displayOrderScreen();
-    }
 
     public static void displayOrderScreen() {
+        Order order = new Order();
         while(true) {
             String options = """
                     --------------------------
@@ -27,14 +25,14 @@ public class OrderScreen {
                     // HotDog.addHotDog()
                     break;
                 case "2":
-                    // Drinks.addDrink();
+                    order.addItem(addDrink());
                     break;
                 case "3":
-                    // checkout
+                    // order.addItem(addSide());
                     break;
                 case "4":
-                    // Sides.addSide()
-                    break;
+                    checkOut(order);
+                    return;
                 case "0":
                     System.out.println("Your order has been successfully cancelled.");
                     return;
@@ -42,6 +40,29 @@ public class OrderScreen {
                     System.out.println("Invalid Option");
 
             }
+        }
+    }
+
+    public static Drink addDrink() {
+        System.out.println("Enter drink size (small, medium, large): ");
+        String size = scanner.nextLine();
+
+        System.out.println("Enter flavor (Water, Coke, Dr. Pepper, etc): ");
+        String flavor = scanner.nextLine();
+        return new Drink(size, flavor);
+    }
+
+    public static void checkOut(Order order) {
+        System.out.println(order.displayOrder());
+        System.out.printf("Total: $%.2f\n", order.getTotal());
+
+        System.out.print("Confirm order? (yes/no): ");
+        String confirm = scanner.nextLine();
+        if (confirm.equalsIgnoreCase("yes")) {
+            ReceiptManager.saveReceipt(order);
+            System.out.println("Receipt saved!\n");
+        } else {
+            System.out.println("Order discarded.\n");
         }
     }
 }

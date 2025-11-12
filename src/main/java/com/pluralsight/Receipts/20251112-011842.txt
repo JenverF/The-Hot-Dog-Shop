@@ -1,0 +1,10 @@
+HOTDOG RECEIPT
+Date:  2025-11-12  |  Time: HH:mm:ss
+===================================
+===== ORDER SUMMARY =====
+large water Price: $3.00
+small water Price: $2.00
+Total: $5.00
+
+TOTAL: $5.00
+===================================
