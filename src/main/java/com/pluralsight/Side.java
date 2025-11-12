@@ -1,14 +1,17 @@
 package com.pluralsight;
 
 public class Side extends Item {
-    private String type;
-    private double cost = 1.50;
-
-    public String getType() {
-        return type;
+    public Side(String name, double price) {
+        super(name, price);
+        setPrice();
     }
 
-    public double getCost() {
-        return cost;
+    public void setPrice() {
+        price = 1.50;
+    }
+
+    @Override
+    public String getSummary() {
+        return "";
     }
 }

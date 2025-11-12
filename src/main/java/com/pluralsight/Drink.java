@@ -1,33 +1,35 @@
 package com.pluralsight;
 
 public class Drink extends Item {
-    private double price;
     private String size;
-    private String name;
-    static String [] drinks = {"Dr. Pepper", "Coke", "Pepsi", "Water", "Lemonade", "Sprite"};
+    private String flavor;
 
-    public double getPrice() {
-        return price;
+    public Drink(String name, double price, String size, String flavor) {
+        super("Drink", 0.0);
+        this.size = size;
+        this.flavor = flavor;
+        setPrice();
     }
 
-    public String getSize() {
-        return size;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public static void addDrink() {
-        Drink drink = new Drink();
-        double price = 0;
-
-        System.out.println("What drink would you like?");
-        //for(String drink1 : drinks)
+    public void setPrice() {
+        switch(size.toLowerCase()) {
+            case "small":
+                price = 2.00;
+                break;
+            case "medium":
+                price = 2.50;
+                break;
+            case "large":
+                price = 3.00;
+                break;
+            default:
+                price = 2.00;
+                break;
+        }
     }
 
     @Override
-    public double getCost() {
-        return 0;
+    public String getSummary() {
+        return String.format("%s %s Price: $%.2f", size, flavor, price);
     }
 }
