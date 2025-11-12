@@ -28,7 +28,6 @@ public class Order {
         for (Item i : items) {
             summary += i.getSummary() + "\n";
         }
-        summary += String.format("Total: $%.2f\n", getTotal());
         return summary;
     }
 }

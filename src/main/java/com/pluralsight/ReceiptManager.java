@@ -9,7 +9,7 @@ import java.time.format.DateTimeFormatter;
 public class ReceiptManager {
     public static void saveReceipt(Order order) {
         DateTimeFormatter timeStamp = DateTimeFormatter.ofPattern("yyyyMMdd-hhmmss");
-        DateTimeFormatter displayTime = DateTimeFormatter.ofPattern("'Date: ' yyyy-MM-dd  |  'Time: HH:mm:ss'");
+        DateTimeFormatter displayTime = DateTimeFormatter.ofPattern("'Date: ' yyyy-MM-dd | 'Time: ' HH:mm:ss");
         String time = LocalDateTime.now().format(timeStamp);
         String fileName = "src/main/java/com/pluralsight/Receipts/" + time + ".txt";
 

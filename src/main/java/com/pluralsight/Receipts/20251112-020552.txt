@@ -1,0 +1,10 @@
+HOTDOG RECEIPT
+Date:  2025-11-12 | Time:  14:05:52
+===================================
+===== ORDER SUMMARY =====
+samll water Price: $2.00
+Side Price: $1.5
+Side Price: $1.5
+
+TOTAL: $5.00
+===================================

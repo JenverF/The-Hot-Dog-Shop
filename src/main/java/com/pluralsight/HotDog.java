@@ -12,7 +12,7 @@ public class HotDog extends Item {
     private List<String> condiments;
     private List<String> extraToppings;
 
-    public HotDog(String name, double price, String hotDogType, String hotDogSize, boolean toastedBun) {
+    public HotDog(String name, String hotDogType, boolean toastedBun) {
         super("HotDog", 0.0);
         this.hotDogType = hotDogType;
         this.hotDogSize = hotDogSize;

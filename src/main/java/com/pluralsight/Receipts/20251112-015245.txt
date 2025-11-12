@@ -1,8 +1,8 @@
 HOTDOG RECEIPT
-Date:  2025-11-12  |  Time: HH:mm:ss
+Date:  2025-11-12 | Time:  13:52:45
 ===================================
 ===== ORDER SUMMARY =====
-2 2 Price: $2.00
+small water Price: $2.00
 Total: $2.00
 
 TOTAL: $2.00

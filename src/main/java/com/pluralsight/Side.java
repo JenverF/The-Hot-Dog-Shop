@@ -1,8 +1,8 @@
 package com.pluralsight;
 
 public class Side extends Item {
-    public Side(String name, double price) {
-        super(name, price);
+    public Side(String name) {
+        super(name, 0.0);
         setPrice();
     }
 
@@ -12,6 +12,6 @@ public class Side extends Item {
 
     @Override
     public String getSummary() {
-        return name + "Price: " + price;
+        return name + " Price: $" + price;
     }
 }
