@@ -10,7 +10,7 @@ public class OrderScreen {
         boolean isRunning = true;
         while(isRunning) {
             String options = """
-                    --------------------------
+                    ==========================
                     What would you like to do?
                         1) Add Hot Dog
                         2) Add Drink
@@ -18,7 +18,7 @@ public class OrderScreen {
                         4) Checkout
                         0) Cancel Order
                     Please select an option:
-                    --------------------------""";
+                    ==========================""";
             System.out.println(options);
             String choice = scanner.nextLine();
             switch(choice) {
@@ -53,7 +53,8 @@ public class OrderScreen {
         System.out.println("Enter type of hot dog (regular, spicy, cheesy, veggie):");
         String type = scanner.nextLine();
 
-        System.out.println("Would you like the bun toasted? (yes/no):");
+        // Special option
+        System.out.println("Would you like the bun toasted for $0.25? (yes/no):");
         boolean toasted = scanner.nextLine().equalsIgnoreCase("yes");
 
         HotDog hotdog = new HotDog(size, type, toasted);
@@ -92,7 +93,7 @@ public class OrderScreen {
     }
 
     public static Drink addDrink() {
-        System.out.println("Enter drink size (small, medium, large): ");
+        System.out.println("Enter drink size (small $2.00, medium $2.50, large $3.00): ");
         String size = scanner.nextLine();
         System.out.println("Enter flavor (Water, Coke, Dr. Pepper, etc): ");
         String flavor = scanner.nextLine();
@@ -100,7 +101,7 @@ public class OrderScreen {
     }
 
     public static Side addSide() {
-        System.out.println("Enter side (chips, fries, onion rings): ");
+        System.out.println("Enter side (chips, fries, onion rings, $1.50 each): ");
         String type = scanner.nextLine();
         return new Side(type);
     }

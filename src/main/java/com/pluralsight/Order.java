@@ -23,7 +23,7 @@ public class Order {
     }
 
     public String displayOrder() {
-        String summary = "===== ORDER SUMMARY =====\n";
+        String summary = "========== ORDER SUMMARY ==========\n";
 
         for (Item i : items) {
             summary += i.getSummary() + "\n";

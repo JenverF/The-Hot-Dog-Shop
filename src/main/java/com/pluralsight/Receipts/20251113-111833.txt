@@ -1,0 +1,13 @@
+========= HOT DOG RECEIPT =========
+Date:  2025-11-13 | Time:  11:18:33
+===================================
+========== ORDER SUMMARY ==========
+small regular hot dog with toasted bun 
+Regular Toppings: [onions]
+Premium Toppings: [chili]
+Extra Toppings: []
+Condiments: [mayo]
+HOT DOG PRICE: $5.0
+
+TOTAL: $5.00
+===================================

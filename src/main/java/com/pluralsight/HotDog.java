@@ -25,7 +25,7 @@ public class HotDog extends Item {
     }
 
     private void setBasePrice() {
-        switch(hotDogSize.toLowerCase()) {
+        switch(hotDogSize) {
             case "small":
                 price = 4.00;
                 break;
@@ -68,6 +68,21 @@ public class HotDog extends Item {
 
     public void addExtraTopping(String extraTopping) {
         extraToppings.add(extraTopping);
+        switch(hotDogSize) {
+            case "small":
+                price += 0.30;
+                break;
+            case "medium":
+                price += 0.60;
+                break;
+            case "large":
+                price += 0.90;
+                break;
+            default:
+                price = 0.60;
+                break;
+        }
+
     }
 
     public void addCondiments(String sauce) {
@@ -77,11 +92,11 @@ public class HotDog extends Item {
     @Override
     public String getSummary() {
         return String.format("""
-                %s %s Hot Dog%s
+                %s %s hot dog%s
                 Regular Toppings: %s
                 Premium Toppings: %s
                 Extra Toppings: %s
                 Condiments: %s
-                Hot Dog Price: $%s""", hotDogSize, hotDogType, toastedBun ? " with toasted bun " : "", toppings, premiumToppings, extraToppings, condiments, price);
+                HOT DOG PRICE: $%s""", hotDogSize, hotDogType, toastedBun ? " with toasted bun " : "", toppings, premiumToppings, extraToppings, condiments, price);
     }
 }

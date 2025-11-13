@@ -30,6 +30,6 @@ public class Drink extends Item {
 
     @Override
     public String getSummary() {
-        return String.format("%s %s Price: $%.2f", size, flavor, price);
+        return size + " " + flavor + " Price: " + price;
     }
 }

@@ -15,7 +15,7 @@ public class ReceiptManager {
 
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(fileName));
-            bw.write("HOT DOG RECEIPT\n");
+            bw.write("========= HOT DOG RECEIPT =========\n");
             bw.write(LocalDateTime.now().format(displayTime) + "\n");
             bw.write("===================================\n");
             bw.write(order.displayOrder());
