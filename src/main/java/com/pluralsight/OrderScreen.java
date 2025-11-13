@@ -112,7 +112,6 @@ public class OrderScreen {
                 System.out.println("Invalid condiment: " + c.trim());
             }
         }
-
         return hotdog;
     }
 
