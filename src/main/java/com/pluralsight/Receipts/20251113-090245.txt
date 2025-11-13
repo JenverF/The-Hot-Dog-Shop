@@ -1,0 +1,13 @@
+HOTDOG RECEIPT
+Date:  2025-11-13 | Time:  09:02:45
+===================================
+===== ORDER SUMMARY =====
+medium spicy Hot Dog
+Regular Toppings: [onions]
+Premium Toppings: []
+Extra Toppings: []
+Condiments: []
+Hot Dog Price: $5.5
+
+TOTAL: $5.50
+===================================

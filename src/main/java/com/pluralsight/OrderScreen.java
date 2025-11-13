@@ -72,7 +72,7 @@ public class OrderScreen {
             if (!p.isBlank()) hotdog.addPremiumTopping(p.trim());
         }
 
-        // Extra toppings (optional)
+        // Extra toppings
         System.out.println("Would you like to add extra toppings for $0.50 each? (yes/no)");
         if (scanner.nextLine().equalsIgnoreCase("yes")) {
             System.out.println("Enter extra toppings (comma separated):");
