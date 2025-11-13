@@ -10,8 +10,16 @@ public class Order {
         this.items = new ArrayList<>();
     }
 
+    public List<Item> getItems() {
+        return items;
+    }
+
     public void addItem(Item item) {
-        items.add(item);
+        if(item != null) {
+            items.add(item);
+        } else {
+            System.out.println("Invalid item, not added to order");
+        }
     }
 
     public double getTotal() {

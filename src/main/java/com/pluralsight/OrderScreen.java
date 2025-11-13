@@ -46,6 +46,13 @@ public class OrderScreen {
         }
     }
 
+    private static boolean isValid(String input, String[] validList) {
+        for (String valid : validList) {
+            if (valid.equalsIgnoreCase(input.trim())) return true;
+        }
+        return false;
+    }
+
     public static HotDog addHotDog() {
         System.out.println("Enter hot dog size (small, medium, large):");
         String size = scanner.nextLine();
@@ -60,53 +67,86 @@ public class OrderScreen {
         HotDog hotdog = new HotDog(size, type, toasted);
 
         // Regular toppings
-        System.out.println("Add regular toppings (comma separated):");
-        String[] regulars = scanner.nextLine().split(",");
-        for (String r : regulars) {
-            if (!r.isBlank()) hotdog.addRegularTopping(r.trim());
+        System.out.println("Add regular toppings (" + String.join(", ", MenuItems.regularToppings) + "):");
+        String[] toppingInput = scanner.nextLine().split(",");
+        for (String t : toppingInput) {
+            if (isValid(t, MenuItems.regularToppings)) {
+                hotdog.addRegularTopping(t.trim());
+            } else if (!t.isBlank()) {
+                System.out.println("Invalid topping: " + t.trim());
+            }
         }
 
         // Premium toppings
-        System.out.println("Add premium toppings (comma separated, each adds extra cost):");
-        String[] premiums = scanner.nextLine().split(",");
-        for (String p : premiums) {
-            if (!p.isBlank()) hotdog.addPremiumTopping(p.trim());
+        System.out.println("Add premium toppings (" + String.join(", ", MenuItems.premiumtoppings) + "):");
+        String[] premiumInput = scanner.nextLine().split(",");
+        for (String p : premiumInput) {
+            if (isValid(p, MenuItems.premiumtoppings)) {
+                hotdog.addPremiumTopping(p.trim());
+            } else if (!p.isBlank()) {
+                System.out.println("Invalid premium topping: " + p.trim());
+            }
         }
 
         // Extra toppings
         System.out.println("Would you like to add extra toppings for $0.50 each? (yes/no)");
         if (scanner.nextLine().equalsIgnoreCase("yes")) {
-            System.out.println("Enter extra toppings (comma separated):");
-            String[] extras = scanner.nextLine().split(",");
-            for (String e : extras) {
-                if (!e.isBlank()) hotdog.addExtraTopping(e.trim());
+            System.out.println("Add extra toppings (" + String.join(", ", MenuItems.regularToppings) + "):");
+            String[] extraInput = scanner.nextLine().split(",");
+            for (String e : extraInput) {
+                if (isValid(e, MenuItems.regularToppings)) {
+                    hotdog.addExtraTopping(e.trim());
+                } else if (!e.isBlank()) {
+                    System.out.println("Invalid extra topping: " + e.trim());
+                }
             }
         }
 
         // Condiments
-        System.out.println("Add condiments (comma separated):");
-        String[] condiments = scanner.nextLine().split(",");
-        for (String c : condiments) {
-            if (!c.isBlank()) hotdog.addCondiments(c.trim());
+        System.out.println("Add condiments (" + String.join(", ", MenuItems.condiments) + "):");
+        String[] condInput = scanner.nextLine().split(",");
+        for (String c : condInput) {
+            if (isValid(c, MenuItems.condiments)) {
+                hotdog.addCondiments(c.trim());
+            } else if (!c.isBlank()) {
+                System.out.println("Invalid condiment: " + c.trim());
+            }
         }
+
         return hotdog;
     }
 
     public static Drink addDrink() {
-        System.out.println("Enter drink size (small $2.00, medium $2.50, large $3.00): ");
-        String size = scanner.nextLine();
-        System.out.println("Enter flavor (Water, Coke, Dr. Pepper, etc): ");
-        String flavor = scanner.nextLine();
+        System.out.println("Enter drink size (small, medium, large):");
+        String size = scanner.nextLine().trim().toLowerCase();
+
+        System.out.println("Enter drink flavor (" + String.join(", ", MenuItems.drinks) + "):");
+        String flavor = scanner.nextLine().trim().toLowerCase();
+
+        if (!isValid(flavor, MenuItems.drinks)) {
+            System.out.println("Invalid drink selection.");
+            return null;
+        }
         return new Drink(size, flavor);
     }
 
     public static Side addSide() {
-        System.out.println("Enter side (chips, fries, onion rings, $1.50 each): ");
-        String type = scanner.nextLine();
+        System.out.println("Enter side (" + String.join(", ", MenuItems.sides) + "):");
+        String type = scanner.nextLine().trim().toLowerCase();
+
+        if (!isValid(type, MenuItems.sides)) {
+            System.out.println("Invalid side selection.");
+            return null;
+        }
         return new Side(type);
     }
 
     public static void checkOut(Order order) {
+        if(order == null || order.getItems().isEmpty()) {
+            System.out.println("You haven't ordered anything yet! Come back when you add items to your order.");
+            return;
+        }
+
         System.out.println(order.displayOrder());
         System.out.printf("Total: $%.2f\n", order.getTotal());
 

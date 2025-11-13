@@ -97,6 +97,6 @@ public class HotDog extends Item {
                 Premium Toppings: %s
                 Extra Toppings: %s
                 Condiments: %s
-                HOT DOG PRICE: $%s""", hotDogSize, hotDogType, toastedBun ? " with toasted bun " : "", toppings, premiumToppings, extraToppings, condiments, price);
+                \nhot dog PRICE: $%s""", hotDogSize, hotDogType, toastedBun ? " with toasted bun " : "", toppings, premiumToppings, extraToppings, condiments, price);
     }
 }

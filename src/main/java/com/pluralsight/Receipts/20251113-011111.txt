@@ -1,0 +1,16 @@
+========= HOT DOG RECEIPT =========
+Date:  2025-11-13 | Time:  13:11:12
+===================================
+========== ORDER SUMMARY ==========
+small regular hot dog
+Regular Toppings: [onions]
+Premium Toppings: [chili]
+Extra Toppings: []
+Condiments: [mustard]
+
+HOT DOG PRICE: $4.75
+small coke Price: $2.0
+fries Price: $1.5
+
+TOTAL: $8.25
+===================================

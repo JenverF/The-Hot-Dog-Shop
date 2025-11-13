@@ -1,0 +1,15 @@
+========= HOT DOG RECEIPT =========
+Date:  2025-11-13 | Time:  13:08:56
+===================================
+========== ORDER SUMMARY ==========
+small regular hot dog with toasted bun 
+Regular Toppings: [onions, cream cheese, jalapenos]
+Premium Toppings: [bacon, nacho cheese]
+Extra Toppings: [onions, jalapenos]
+Condiments: [ketchup, mustard, mayo]
+HOT DOG PRICE: $6.35
+small coke Price: 2.0
+fries Price: $1.5
+
+TOTAL: $9.85
+===================================
