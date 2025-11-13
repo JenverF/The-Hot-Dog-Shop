@@ -12,7 +12,7 @@ public class HotDog extends Item {
     private List<String> condiments;
     private List<String> extraToppings;
 
-    public HotDog(String name, String hotDogType, boolean toastedBun) {
+    public HotDog(String hotDogSize, String hotDogType, boolean toastedBun) {
         super("HotDog", 0.0);
         this.hotDogType = hotDogType;
         this.hotDogSize = hotDogSize;
@@ -25,7 +25,7 @@ public class HotDog extends Item {
     }
 
     private void setBasePrice() {
-        switch(hotDogSize) {
+        switch(hotDogSize.toLowerCase()) {
             case "small":
                 price = 4.00;
                 break;
@@ -77,11 +77,11 @@ public class HotDog extends Item {
     @Override
     public String getSummary() {
         return String.format("""
-                %s %s HotDog%s
+                %s %s Hot Dog%s
                 Regular Toppings: %s
                 Premium Toppings: %s
                 Extra Toppings: %s
                 Condiments: %s
-                Price: %s""", hotDogSize, hotDogType, toastedBun ? "toasted bun" : "", premiumToppings, extraToppings, condiments, price);
+                Hot Dog Price: $%s""", hotDogSize, hotDogType, toastedBun ? " with toasted bun " : "", toppings, premiumToppings, extraToppings, condiments, price);
     }
 }

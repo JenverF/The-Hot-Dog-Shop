@@ -23,7 +23,7 @@ public class OrderScreen {
             String choice = scanner.nextLine();
             switch(choice) {
                 case "1":
-                    // HotDog.addHotDog()
+                    order.addItem(addHotDog());
                     break;
                 case "2":
                     order.addItem(addDrink());
@@ -46,16 +46,50 @@ public class OrderScreen {
         }
     }
 
-//    public static HotDog addHotDog() {
-//        System.out.println("Enter Hot Dog size (small, medium, large");
-//        String size = scanner.nextLine();
-//        System.out.println("Enter Hot Dog type (regular, spicy, vegan, cheesy):");
-//        String type = scanner.nextLine();
-//        System.out.println("Would you like the bun toasted? (yes/no)");
-//        boolean toasted = scanner.nextLine().equalsIgnoreCase("yes");
-//
-//        HotDog hotdog = new HotDog(size, type, toasted);
-//    }
+    public static HotDog addHotDog() {
+        System.out.println("Enter hot dog size (small, medium, large):");
+        String size = scanner.nextLine();
+
+        System.out.println("Enter type of hot dog (regular, spicy, cheesy, veggie):");
+        String type = scanner.nextLine();
+
+        System.out.println("Would you like the bun toasted? (yes/no):");
+        boolean toasted = scanner.nextLine().equalsIgnoreCase("yes");
+
+        HotDog hotdog = new HotDog(size, type, toasted);
+
+        // Regular toppings
+        System.out.println("Add regular toppings (comma separated):");
+        String[] regulars = scanner.nextLine().split(",");
+        for (String r : regulars) {
+            if (!r.isBlank()) hotdog.addRegularTopping(r.trim());
+        }
+
+        // Premium toppings
+        System.out.println("Add premium toppings (comma separated, each adds extra cost):");
+        String[] premiums = scanner.nextLine().split(",");
+        for (String p : premiums) {
+            if (!p.isBlank()) hotdog.addPremiumTopping(p.trim());
+        }
+
+        // Extra toppings (optional)
+        System.out.println("Would you like to add extra toppings for $0.50 each? (yes/no)");
+        if (scanner.nextLine().equalsIgnoreCase("yes")) {
+            System.out.println("Enter extra toppings (comma separated):");
+            String[] extras = scanner.nextLine().split(",");
+            for (String e : extras) {
+                if (!e.isBlank()) hotdog.addExtraTopping(e.trim());
+            }
+        }
+
+        // Condiments
+        System.out.println("Add condiments (comma separated):");
+        String[] condiments = scanner.nextLine().split(",");
+        for (String c : condiments) {
+            if (!c.isBlank()) hotdog.addCondiments(c.trim());
+        }
+        return hotdog;
+    }
 
     public static Drink addDrink() {
         System.out.println("Enter drink size (small, medium, large): ");
