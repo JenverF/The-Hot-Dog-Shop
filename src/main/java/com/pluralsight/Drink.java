@@ -23,7 +23,7 @@ public class Drink extends Item {
                 price = 3.00;
                 break;
             default:
-                price = 2.00;
+                price = 2.50;
                 break;
         }
     }

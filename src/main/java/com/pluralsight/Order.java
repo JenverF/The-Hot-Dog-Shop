@@ -18,7 +18,7 @@ public class Order {
         if(item != null) {
             items.add(item);
         } else {
-            System.out.println("Invalid item, not added to order");
+            System.out.println("Not added to order");
         }
     }
 

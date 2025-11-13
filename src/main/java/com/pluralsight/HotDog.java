@@ -36,7 +36,7 @@ public class HotDog extends Item {
                 price = 7.00;
                 break;
             default:
-                price = 5.50;
+                System.out.println("Not a valid input.");;
                 break;
         }
         if(toastedBun) {
@@ -79,7 +79,7 @@ public class HotDog extends Item {
                 price += 0.90;
                 break;
             default:
-                price = 0.60;
+                System.out.println("Not a valid input.");;
                 break;
         }
 

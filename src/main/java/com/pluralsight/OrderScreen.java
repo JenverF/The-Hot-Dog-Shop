@@ -112,6 +112,7 @@ public class OrderScreen {
                 System.out.println("Invalid condiment: " + c.trim());
             }
         }
+        System.out.println("Your hot dog has been added.");
         return hotdog;
     }
 
@@ -126,6 +127,7 @@ public class OrderScreen {
             System.out.println("Invalid drink selection.");
             return null;
         }
+        System.out.println("Your drink has been added.");
         return new Drink(size, flavor);
     }
 
@@ -137,12 +139,13 @@ public class OrderScreen {
             System.out.println("Invalid side selection.");
             return null;
         }
+        System.out.println("Your side has been added.");
         return new Side(type);
     }
 
     public static void checkOut(Order order) {
         if(order == null || order.getItems().isEmpty()) {
-            System.out.println("You haven't ordered anything yet! Come back when you add items to your order.");
+            System.out.println("You haven't ordered anything yet! Check out when you add items to your order.");
             return;
         }
 
