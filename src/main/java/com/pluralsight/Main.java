@@ -5,12 +5,15 @@ import java.util.Scanner;
 public class Main {
     static Scanner scanner = new Scanner(System.in);
 
+    // main method
     static void main() {
         homeScreen();
     }
 
+    // Controls the homescreen
     public static void homeScreen() {
-        boolean isRunning = true;
+        boolean isRunning = true; //checks if the function is running
+
 
         while(isRunning) {
             String options = """
@@ -21,7 +24,9 @@ public class Main {
                     Select an option:
                     ===============================================================""";
             System.out.println(options);
+            // user input for the choices
             String choice = scanner.nextLine();
+            // if user enters 1 display home screen, if user enters 0 stop running program
             switch(choice) {
                 case "1":
                     OrderScreen.displayOrderScreen();
