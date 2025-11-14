@@ -5,7 +5,7 @@ The system validates inputs, generates receipts, and calculates totals just like
 
 ---
 # UML Diagram
-// insert uml diagram picture
+![img.png](images/hotdogcartUML.png)
 ---
 ---
 
@@ -37,6 +37,41 @@ Users can customize:
 - Prices formatted to two decimal places
 
 ---
+## Welcome/Display Home Screen: Start new order, Exit
+![img.png](images/homeScreen.png)
+---
+
+---
+## Order Screen: Add Hot Dog, Add Drink, Add Side, Checkout, Cancel Order
+![img.png](images/orderScreen.png)
+---
+
+---
+## Add Hot Dog Screen: Choose size, type, toasted, regular toppings, premium toppings, extra toppings, condiments
+![img.png](images/addHotDogScreen.png)
+---
+
+---
+## Add Drink: Choose size, flavor
+![img.png](images/addDrinkScreen.png)
+---
+
+---
+## Add Side: Choose side
+![img.png](images/addSideScreen.png)
+---
+
+---
+## Checkout Screen: Order Summary, Confirm order saying yes (saves to new receipt), Cancel order saying no
+![img.png](images/checkOutOrderScreen.png)
+---
+
+---
+## Receipt File: Organized Order Summary
+![img.png](images/receiptFile.png)
+---
+
+---
 
 ## Author
 
@@ -51,3 +86,5 @@ Van Putten, M. (2025). LTCA Instructor Year Up United.
 OpenAI. (2025). ChatGPT (GPT-5) [Large language model]. https://chat.openai.com/ Features assistance
 
 Mailjard, R. (2025). Capstone project structure checklist. [Advanced Java OOP – Capstone 2: Custom Food Shop Checklist] https://gist.github.com/RemseyMailjard/e9ab857ca4f92459f40de6d0b75b57fb Year Up United.
+
+---
