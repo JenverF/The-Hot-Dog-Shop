@@ -85,7 +85,7 @@ Users can customize:
     }
 ```
 
-Why it's interesting: This piece of code checks if what the user inputted for these menu items are actually in the array. This piece of code works for adding a hot dog, drink, and size which is why I find it interesting and also practical instead of writing the same code for each method.
+Why it's interesting: This piece of code checks if what the user inputted for these menu items is actually in the array. This piece of code works for adding a hot dog, drink, and size, which is why I find it interesting and also practical instead of writing the same code for each method.
 
 ---
 
