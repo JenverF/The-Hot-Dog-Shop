@@ -72,6 +72,24 @@ Users can customize:
 ---
 
 ---
+## Interesting Piece of Code:
+``` java
+// check if input is in the menu items
+    public static boolean isValid(String input, String[] validList) {
+        // traverses the list of the menu items to check if item is in menu items
+        for (String valid : validList) {
+            // equalsIgnoreCase compares two strings ignoring difference in string
+            if (valid.equalsIgnoreCase(input.trim())) return true; //if item is in the list, return true
+        } // trim removes spaces before and after the words
+        return false; // if item is not in the menu items list, it is invalid
+    }
+```
+
+Why it's interesting: This piece of code checks if what the user inputted for these menu items are actually in the array. This piece of code works for adding a hot dog, drink, and size which is why I find it interesting and also practical instead of writing the same code for each method.
+
+---
+
+---
 
 ## Author
 
