@@ -18,7 +18,7 @@ public class Main {
         while(isRunning) {
             String options = """
                     ===============================================================
-                    Welcome to Frank's House, home of the best hot dogs in Seattle!
+                    Welcome to Jenver's Hot Dog Cart Online Ordering, home of the best hot dogs in Seattle!
                         1) New Order
                         0) Exit
                     Select an option:
