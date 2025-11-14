@@ -56,18 +56,18 @@ public class OrderScreen {
     }
 
     // check if input is in the menu items
-    private static boolean isValid(String input, String[] validList) {
-        //traverses the list of the menu items to check if item is in menu items
+    public static boolean isValid(String input, String[] validList) {
+        // traverses the list of the menu items to check if item is in menu items
         for (String valid : validList) {
-            //equalsIgnoreCase compares two strings ignoring difference in string
+            // equalsIgnoreCase compares two strings ignoring difference in string
             if (valid.equalsIgnoreCase(input.trim())) return true; //if item is in the list, return true
-        } //trim removes spaces before and after the words
-        return false; //if item is not in the menu items list, it is invalid
+        } // trim removes spaces before and after the words
+        return false; // if item is not in the menu items list, it is invalid
     }
     // adding stuff to each hot dog with a foreach loop that checks if that topping is in the list
     // adds hotdog to the order
     public static HotDog addHotDog() {
-        System.out.println("Enter hot dog size (small, medium, large):");//ask user for hot dog size
+        System.out.println("Enter hot dog size (small, medium, large):"); // ask user for hot dog size
         String size = scanner.nextLine(); // input for hot dog size
 
         System.out.println("Enter type of hot dog (regular, spicy, cheesy, veggie):");
@@ -95,11 +95,11 @@ public class OrderScreen {
         }
 
         // Premium toppings
-        System.out.println("Add premium toppings (" + String.join(", ", MenuItems.premiumtoppings) + "):");
-        String[] premiumInput = scanner.nextLine().split(","); //array for premium toppings ordered
-        //traverses through premium input, and checks if they are valid
+        System.out.println("Add premium toppings (" + String.join(", ", MenuItems.premiumToppings) + "):");
+        String[] premiumInput = scanner.nextLine().split(","); // array for premium toppings ordered
+        // traverses through premium input, and checks if they are valid
         for (String p : premiumInput) {
-            if (isValid(p, MenuItems.premiumtoppings)) {
+            if (isValid(p, MenuItems.premiumToppings)) {
                 hotdog.addPremiumTopping(p.trim());
             } else if (!p.isBlank()) {
                 System.out.println("Invalid premium topping: " + p.trim());
@@ -176,7 +176,7 @@ public class OrderScreen {
         // confirmation of order, yes to proceed with the order, no to cancel and go back to home page
         System.out.print("Confirm order? (yes/no): ");
         String confirm = scanner.nextLine();
-        // saves order to receipts folder
+        // saves order to receipts folder if confirmed
         if (confirm.equalsIgnoreCase("yes")) {
             ReceiptManager.saveReceipt(order);
         } else {

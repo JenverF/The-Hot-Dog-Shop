@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-// abstract class that drink, hotdog, and side extend into because they share a name, price, and summary
+// abstract class that drink, hot dog, and side extend into because they share a name, price, and summary
 public abstract class Item {
     public String name;
     public double price;

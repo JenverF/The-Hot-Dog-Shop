@@ -3,15 +3,19 @@ package com.pluralsight;
 import java.util.ArrayList;
 import java.util.List;
 
+// HotDog class that represents a customizable hot dog. It extends the item class
+// Includes options for toppings, premium toppings, condiments, extras, hot dog type, size and bun toasted or not
 public class HotDog extends Item {
-    private String hotDogType;
-    private String hotDogSize;
-    private boolean toastedBun;
-    private List<String> toppings;
-    private List<String> premiumToppings;
-    private List<String> condiments;
-    private List<String> extraToppings;
+    private String hotDogType; // hot dog type, spicy , regular, veggie, cheesy
+    private String hotDogSize; // size of hot dog, small medium large
+    private boolean toastedBun; // indicates whether the bun is toasted
+    // lists to store different kinds of toppings and condiments
+    private List<String> toppings; // regular (free)
+    private List<String> premiumToppings; // premium (extra cost)
+    private List<String> condiments; // condiments (free)
+    private List<String> extraToppings;  // extra toppings (additional charge)
 
+    // constructor for creating hot dog object
     public HotDog(String hotDogSize, String hotDogType, boolean toastedBun) {
         super("HotDog", 0.0);
         this.hotDogType = hotDogType;
@@ -21,9 +25,11 @@ public class HotDog extends Item {
         this.premiumToppings = new ArrayList<>();
         this.condiments = new ArrayList<>();
         this.extraToppings = new ArrayList<>();
-        setBasePrice();
+        setBasePrice(); // set the starting price based on size and if its toasted
     }
 
+    // sets the base price of the hot dog depending on size and applies extra cost if the bun is toasted
+    // if size doesn't match a valid option, defaults to small hot dog price
     private void setBasePrice() {
         switch(hotDogSize) {
             case "small":
@@ -36,7 +42,7 @@ public class HotDog extends Item {
                 price = 7.00;
                 break;
             default:
-                System.out.println("Not a valid input.");;
+                price = 4.00;
                 break;
         }
         if(toastedBun) {
@@ -44,10 +50,12 @@ public class HotDog extends Item {
         }
     }
 
+    // adds a regular topping for free
     public void addRegularTopping(String topping) {
         toppings.add(topping);
     }
 
+    // adds a premium topping for an extra cost, cost increases based on the size of the hot dog
     public void addPremiumTopping(String premTopping) {
         premiumToppings.add(premTopping);
         switch(hotDogSize) {
@@ -66,6 +74,7 @@ public class HotDog extends Item {
         }
     }
 
+    // adds an extra topping and increases price based on size
     public void addExtraTopping(String extraTopping) {
         extraToppings.add(extraTopping);
         switch(hotDogSize) {
@@ -85,10 +94,12 @@ public class HotDog extends Item {
 
     }
 
+    // adds condiments for free
     public void addCondiments(String sauce) {
         condiments.add(sauce);
     }
 
+    // returns a formatted string of this hot dog and includes all toppings, condiments, and final price to display in the customer's order summary and receipt
     @Override
     public String getSummary() {
         return String.format("""
