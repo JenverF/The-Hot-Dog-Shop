@@ -1,0 +1,22 @@
+========= HOT DOG RECEIPT =========
+Date:  2025-11-13 | Time:  19:25:02
+===================================
+========== ORDER SUMMARY ==========
+small regular hot dog
+Regular Toppings: [onions]
+Premium Toppings: [bacon]
+Extra Toppings: []
+Condiments: [mustard, ketchup]
+
+hot dog PRICE: $4.75
+large spicy hot dog with toasted bun 
+Regular Toppings: [jalapenos, banana peppers]
+Premium Toppings: [chili, shredded cheese]
+Extra Toppings: [jalapenos]
+Condiments: [sriracha]
+
+hot dog PRICE: $11.15
+small coke PRICE: $2.0
+
+TOTAL: $17.90
+===================================
