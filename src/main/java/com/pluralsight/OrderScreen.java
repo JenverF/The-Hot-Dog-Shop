@@ -81,7 +81,7 @@ public class OrderScreen {
         HotDog hotdog = new HotDog(size, type, toasted);
 
         // Regular toppings
-        System.out.println("Add regular toppings separated by commas(" + String.join(", ", MenuItems.regularToppings) + "):");
+        System.out.println("Add regular toppings separated by commas (" + String.join(", ", MenuItems.regularToppings) + "):");
         String[] toppingInput = scanner.nextLine().split(","); // array for toppings ordered separating each topping with commas
         // traverses through the toppings input
         for (String t : toppingInput) {
@@ -95,7 +95,7 @@ public class OrderScreen {
         }
 
         // Premium toppings
-        System.out.println("Add premium toppings separated by commas(" + String.join(", ", MenuItems.premiumToppings) + "):");
+        System.out.println("Add premium toppings separated by commas (" + String.join(", ", MenuItems.premiumToppings) + "):");
         String[] premiumInput = scanner.nextLine().split(","); // array for premium toppings ordered
         // traverses through premium input, and checks if they are valid
         for (String p : premiumInput) {
@@ -109,7 +109,7 @@ public class OrderScreen {
         // Extra toppings
         System.out.println("Would you like to add extra toppings for $0.50 each? (yes/no)");
         if (scanner.nextLine().equalsIgnoreCase("yes")) {
-            System.out.println("Add extra toppings separated by commas(" + String.join(", ", MenuItems.regularToppings) + "):");
+            System.out.println("Add extra toppings separated by commas (" + String.join(", ", MenuItems.regularToppings) + "):");
             String[] extraInput = scanner.nextLine().split(",");
             for (String e : extraInput) {
                 if (isValid(e, MenuItems.regularToppings)) {
@@ -121,7 +121,7 @@ public class OrderScreen {
         }
 
         // Condiments
-        System.out.println("Add condiments separated by commas(" + String.join(", ", MenuItems.condiments) + "):");
+        System.out.println("Add condiments separated by commas (" + String.join(", ", MenuItems.condiments) + "):");
         String[] condInput = scanner.nextLine().split(",");
         for (String c : condInput) {
             if (isValid(c, MenuItems.condiments)) {
